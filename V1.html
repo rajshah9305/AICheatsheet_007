@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Development Cheatsheet 2025 - Pro Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section h3 {
+            color: #764ba2;
+            margin: 25px 0 15px 0;
+            font-size: 1.4em;
+        }
+        
+        .icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .tool-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .tool-name {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .code-block {
+            background: #1a1a1a;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+            position: relative;
+        }
+        
+        .code-block::before {
+            content: attr(data-lang);
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #888;
+            font-size: 0.8em;
+            text-transform: uppercase;
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .pro-tip {
+            background: linear-gradient(135deg, #00c851 0%, #00ff88 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 10px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00c851;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .toc {
+            background: #f1f3f4;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .toc h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .toc li {
+            padding: 5px 0;
+        }
+        
+        .toc a {
+            color: #764ba2;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .toc a:hover {
+            color: #667eea;
+        }
+        
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; margin: 0; }
+            .download-btn { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 AI Development Cheatsheet 2025</h1>
+            <p>The Ultimate Pro Guide to Building AI Applications</p>
+        </div>
+
+        <div class="toc">
+            <h3>📋 Table of Contents</h3>
+            <ul>
+                <li><a href="#llm-apis">1. LLM APIs & Services</a></li>
+                <li><a href="#frameworks">2. AI Development Frameworks</a></li>
+                <li><a href="#vector-databases">3. Vector Databases & RAG</a></li>
+                <li><a href="#deployment">4. Deployment Platforms</a></li>
+                <li><a href="#monitoring">5. Monitoring & Analytics</a></li>
+                <li><a href="#security">6. Security & Safety</a></li>
+                <li><a href="#optimization">7. Performance Optimization</a></li>
+                <li><a href="#testing">8. Testing Strategies</a></li>
+                <li><a href="#workflows">9. AI Workflows & Agents</a></li>
+                <li><a href="#best-practices">10. Best Practices & Pro Tips</a></li>
+            </ul>
+        </div>
+
+        <div id="llm-apis" class="section">
+            <h2><span class="icon">🤖</span>LLM APIs & Services</h2>
+            
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <div class="tool-name">OpenAI GPT-4 & GPT-4o</div>
+                    <p><strong>Best for:</strong> General purpose, high-quality text generation</p>
+                    <p><strong>Pricing:</strong> $10-30 per 1M tokens</p>
+                    <p><strong>Rate Limits:</strong> 500 RPM (Tier 1)</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-name">Anthropic Claude 4</div>
+                    <p><strong>Best for:</strong> Long context, analysis, coding</p>
+                    <p><strong>Context:</strong> Up to 200K tokens</p>
+                    <p><strong>Safety:</strong> Constitutional AI training</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-name">Google Gemini Pro</div>
+                    <p><strong>Best for:</strong> Multimodal applications</p>
+                    <p><strong>Features:</strong> Text, image, video, audio</p>
+                    <p><strong>Context:</strong> Up to 2M tokens</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-name">Groq</div>
+                    <p><strong>Best for:</strong> Ultra-fast inference</p>
+                    <p><strong>Speed:</strong> 500+ tokens/sec</p>
+                    <p><strong>Models:</strong> Llama 3, Mixtral, Gemma</p>
+                </div>
+            </div>
+
+            <h3>🔧 API Integration Best Practices</h3>
+            
+            <div class="code-block" data-lang="python">
+import openai
+import asyncio
+from tenacity import retry, stop_after_attempt, wait_exponential
+
+class AIClient:
+    def __init__(self, api_key, model="gpt-4"):
+        self.client = openai.AsyncOpenAI(api_key=api_key)
+        self.model = model
+    
+    @retry(
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(multiplier=1, min=4, max=10)
+    )
+    async def generate(self, prompt, **kwargs):
+        try:
+            response = await self.client.chat.completions.create(
+                model=self.model,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=kwargs.get("temperature", 0.7),
+                max_tokens=kwargs.get("max_tokens", 1000),
+                stream=kwargs.get("stream", False)
+            )
+            return response.choices[0].message.content
+        except Exception as e:
+            print(f"API Error: {e}")
+            raise
+
+# Usage with streaming
+async def stream_response(client, prompt):
+    async for chunk in await client.generate(prompt, stream=True):
+        if chunk.choices[0].delta.content:
+            print(chunk.choices[0].delta.content, end="")
+            </div>
+
+            <div class="pro-tip">
+                <strong>💡 Pro Tip:</strong> Always implement exponential backoff, token counting, and proper error handling. Use async clients for better performance in production applications.
+            </div>
+        </div>
+
+        <div id="frameworks" class="section">
+            <h2><span class="icon">🏗️</span>AI Development Frameworks</h2>
+            
+            <h3>LangChain & LangGraph</h3>
+            <div class="code-block" data-lang="python">
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from langgraph.graph import StateGraph, END
+
+# Simple chain
+llm = ChatOpenAI(model="gpt-4")
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "You are a helpful AI assistant."),
+    ("user", "{input}")
+])
+chain = prompt | llm | StrOutputParser()
+
+# Agent workflow with LangGraph
+from typing import TypedDict
+
+class AgentState(TypedDict):
+    messages: list
+    next_action: str
+
+def should_continue(state):
+    return "continue" if len(state["messages"]) < 5 else "end"
+
+workflow = StateGraph(AgentState)
+workflow.add_node("agent", agent_node)
+workflow.add_node("tools", tools_node)
+workflow.add_conditional_edges("agent", should_continue, {
+    "continue": "tools",
+    "end": END
+})
+            </div>
+
+            <h3>LlamaIndex for RAG</h3>
+            <div class="code-block" data-lang="python">
+from llama_index.core import VectorStoreIndex, SimpleDirectoryReader
+from llama_index.core.node_parser import SentenceSplitter
+from llama_index.embeddings.openai import OpenAIEmbedding
+
+# Load and index documents
+documents = SimpleDirectoryReader("./data").load_data()
+node_parser = SentenceSplitter(chunk_size=512, chunk_overlap=50)
+nodes = node_parser.get_nodes_from_documents(documents)
+
+# Create index with custom embedding
+embed_model = OpenAIEmbedding(model="text-embedding-3-large")
+index = VectorStoreIndex(nodes, embed_model=embed_model)
+
+# Query with advanced settings
+query_engine = index.as_query_engine(
+    similarity_top_k=5,
+    response_mode="compact",
+    streaming=True
+)
+response = query_engine.query("Your question here")
+            </div>
+
+            <h3>Haystack 2.0</h3>
+            <div class="code-block" data-lang="python">
+from haystack import Pipeline
+from haystack.components.generators import OpenAIGenerator
+from haystack.components.builders import PromptBuilder
+
+# Build RAG pipeline
+pipeline = Pipeline()
+pipeline.add_component("prompt_builder", PromptBuilder(template="""
+Context: {{context}}
+Question: {{question}}
+Answer: 
+"""))
+pipeline.add_component("llm", OpenAIGenerator(model="gpt-4"))
+
+pipeline.connect("prompt_builder", "llm")
+
+# Run pipeline
+result = pipeline.run({
+    "prompt_builder": {
+        "context": retrieved_docs,
+        "question": user_question
+    }
+})
+            </div>
+
+            <div class="tip-box">
+                <strong>🎯 Framework Selection Guide:</strong><br>
+                • <strong>LangChain:</strong> Best for complex chains and agents<br>
+                • <strong>LlamaIndex:</strong> Ideal for RAG and document indexing<br>
+                • <strong>Haystack:</strong> Great for production-ready NLP pipelines<br>
+                • <strong>AutoGen:</strong> Perfect for multi-agent conversations
+            </div>
+        </div>
+
+        <div id="vector-databases" class="section">
+            <h2><span class="icon">🗄️</span>Vector Databases & RAG</h2>
+            
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <div class="tool-name">Pinecone</div>
+                    <p><strong>Best for:</strong> Managed, scalable vector search</p>
+                    <p><strong>Features:</strong> Real-time updates, metadata filtering</p>
+                    <p><strong>Pricing:</strong> $70/month starter</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-name">Weaviate</div>
+                    <p><strong>Best for:</strong> Open-source, GraphQL API</p>
+                    <p><strong>Features:</strong> Hybrid search, multi-tenancy</p>
+                    <p><strong>Deployment:</strong> Self-hosted or cloud</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-name">Qdrant</div>
+                    <p><strong>Best for:</strong> High-performance, Rust-based</p>
+                    <p><strong>Features:</strong> Payload filtering, clustering</p>
+                    <p><strong>API:</strong> REST and gRPC</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-name">ChromaDB</div>
+                    <p><strong>Best for:</strong> Simple, embedded solution</p>
+                    <p><strong>Features:</strong> In-memory or persistent</p>
+                    <p><strong>Integration:</strong> Built for LangChain</p>
+                </div>
+            </div>
+
+            <h3>📊 Advanced RAG Implementation</h3>
+            <div class="code-block" data-lang="python">
+import chromadb
+from sentence_transformers import SentenceTransformer
+import numpy as np
+
+class AdvancedRAG:
+    def __init__(self):
+        self.client = chromadb.PersistentClient(path="./chroma_db")
+        self.collection = self.client.get_or_create_collection(
+            name="documents",
+            metadata={"hnsw:space": "cosine"}
+        )
+        self.embedder = SentenceTransformer('all-MiniLM-L6-v2')
+    
+    def add_documents(self, texts, metadatas=None):
+        embeddings = self.embedder.encode(texts).tolist()
+        ids = [f"doc_{i}" for i in range(len(texts))]
+        
+        self.collection.add(
+            embeddings=embeddings,
+            documents=texts,
+            metadatas=metadatas or [{}] * len(texts),
+            ids=ids
+        )
+    
+    def hybrid_search(self, query, n_results=5):
+        # Semantic search
+        query_embedding = self.embedder.encode([query]).tolist()
+        semantic_results = self.collection.query(
+            query_embeddings=query_embedding,
+            n_results=n_results
+        )
+        
+        # Keyword search (simple implementation)
+        all_docs = self.collection.get()
+        keyword_scores = []
+        query_words = set(query.lower().split())
+        
+        for doc in all_docs['documents']:
+            doc_words = set(doc.lower().split())
+            score = len(query_words & doc_words) / len(query_words)
+            keyword_scores.append(score)
+        
+        # Combine scores (weighted)
+        combined_results = []
+        for i, (doc, distance) in enumerate(zip(
+            semantic_results['documents'][0],
+            semantic_results['distances'][0]
+        )):
+            semantic_score = 1 - distance  # Convert distance to similarity
+            keyword_score = keyword_scores[i] if i < len(keyword_scores) else 0
+            combined_score = 0.7 * semantic_score + 0.3 * keyword_score
+            combined_results.append((doc, combined_score))
+        
+        # Sort by combined score
+        combined_results.sort(key=lambda x: x[1], reverse=True)
+        return [doc for doc, score in combined_results[:n_results]]
+
+# Usage
+rag = AdvancedRAG()
+documents = ["AI is transforming healthcare...", "Machine learning models..."]
+rag.add_documents(documents)
+results = rag.hybrid_search("artificial intelligence in medicine")
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ RAG Gotchas:</strong><br>
+                • Chunk size matters - test 256, 512, 1024 tokens<br>
+                • Use overlap between chunks (10-20%)<br>
+                • Implement reranking for better results<br>
+                • Monitor embedding drift over time
+            </div>
+        </div>
+
+        <div id="deployment" class="section">
+            <h2><span class="icon">🚀</span>Deployment Platforms</h2>
+            
+            <h3>Cloud Platforms</h3>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <div class="tool-name">Vercel AI SDK</div>
+                    <p><strong>Best for:</strong> Frontend AI apps</p>
+                    <p><strong>Features:</strong> Streaming, React hooks</p>
+                    <p><strong>Integration:</strong> Next.js, Svelte, Vue</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-name">Modal</div>
+                    <p><strong>Best for:</strong> Serverless ML workloads</p>
+                    <p><strong>Features:</strong> GPU scaling, cron jobs</p>
+                    <p><strong>Pricing:</strong> Pay-per-second</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-name">Replicate</div>
+                    <p><strong>Best for:</strong> Model hosting</p>
+                    <p><strong>Features:</strong> Auto-scaling, version control</p>
+                    <p><strong>Models:</strong> Pre-trained and custom</p>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-name">Hugging Face Spaces</div>
+                    <p><strong>Best for:</strong> ML demos and prototypes</p>
+                    <p><strong>Features:</strong> Gradio, Streamlit support</p>
+                    <p><strong>Cost:</strong> Free tier available</p>
+                </div>
+            </div>
+
+            <h3>🐳 Docker Setup for AI Apps</h3>
+            <div class="code-block" data-lang="dockerfile">
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    gcc \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY . .
+
+# Set environment variables
+ENV PYTHONPATH=/app
+ENV PYTHONUNBUFFERED=1
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+# Run the application
+EXPOSE 8000
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+            </div>
+
+            <h3>⚡ FastAPI + Streaming Setup</h3>
+            <div class="code-block" data-lang="python">
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import StreamingResponse
+from pydantic import BaseModel
+import asyncio
+import json
+
+app = FastAPI(title="AI API", version="1.0.0")
+
+class ChatRequest(BaseModel):
+    message: str
+    stream: bool = False
+
+@app.post("/chat")
+async def chat_endpoint(request: ChatRequest):
+    if request.stream:
+        return StreamingResponse(
+            stream_chat_response(request.message),
+            media_type="text/plain"
+        )
+    else:
+        response = await generate_response(request.message)
+        return {"response": response}
+
+async def stream_chat_response(message: str):
+    # Simulate streaming response
+    words = "This is a streaming AI response example.".split()
+    for word in words:
+        yield f"data: {json.dumps({'token': word})}\n\n"
+        await asyncio.sleep(0.1)
+    yield f"data: {json.dumps({'done': True})}\n\n"
+
+@app.middleware("http")
+async def add_cors_headers(request, call_next):
+    response = await call_next(request)
+    response.headers["Access-Control-Allow-Origin"] = "*"
+    response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE"
+    response.headers["Access-Control-Allow-Headers"] = "*"
+    return response
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+            </div>
+
+            <div class="pro-tip">
+                <strong>🔧 Deployment Checklist:</strong><br>
+                ✓ Environment variables for API keys<br>
+                ✓ Rate limiting and authentication<br>
+                ✓ Health checks and monitoring<br>
+                ✓ Error handling and logging<br>
+                ✓ Graceful shutdowns<br>
+                ✓ SSL/TLS certificates
+            </div>
+        </div>
+
+        <div id="monitoring" class="section">
+            <h2><span class="icon">📊</span>Monitoring & Analytics</h2>
+            
+            <h3>LangSmith for LLM Observability</h3>
+            <div class="code-block" data-lang="python">
+import os
+from langsmith import Client
+from langsmith.wrappers import wrap_openai
+from langsmith.evaluation import evaluate
+
+# Setup LangSmith
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGCHAIN_API_KEY"] = "your-api-key"
+
+client = Client()
+
+# Wrap your OpenAI client
+openai_client = wrap_openai(openai.OpenAI())
+
+# Custom evaluator
+def accuracy_evaluator(run, example):
+    prediction = run.outputs["output"]
+    reference = example.outputs["expected"]
+    return {"score": 1 if prediction.lower() == reference.lower() else 0}
+
+# Run evaluation
+results = evaluate(
+    lambda x: your_ai_function(x["input"]),
+    data="your-dataset-name",
+    evaluators=[accuracy_evaluator],
+    experiment_prefix="experiment-v1"
+)
+            </div>
+
+            <h3>Weights & Biases Integration</h3>
+            <div class="code-block" data-lang="python">
+import wandb
+from datetime import datetime
+
+class AIMonitor:
+    def __init__(self, project_name):
+        wandb.init(project=project_name)
+        self.run_id = wandb.run.id
+    
+    def log_request(self, prompt, response, tokens_used, latency):
+        wandb.log({
+            "prompt_length": len(prompt),
+            "response_length": len(response),
+            "tokens_used": tokens_used,
+            "latency_ms": latency * 1000,
+            "cost_estimate": tokens_used * 0.00002,  # Example rate
+            "timestamp": datetime.now().isoformat()
+        })
+    
+    def log_error(self, error_type, error_message):
+        wandb.log({
+            "error_type": error_type,
+            "error_message": error_message,
+            "error_count": 1
+        })
+
+# Usage
+monitor = AIMonitor("my-ai-app")
+start_time = time.time()
+response = await ai_client.generate(prompt)
+latency = time.time() - start_time
+monitor.log_request(prompt, response, 150, latency)
+            </div>
+
+            <div class="tip-box">
+                <strong>📈 Key Metrics to Track:</strong><br>
+                • Token usage and costs<br>
+                • Response latency (p95, p99)<br>
+                • Error rates by endpoint<br>
+                • User satisfaction scores<br>
+                • Model performance drift<br>
+                • Rate limit hit rates
+            </div>
+        </div>
+
+        <div id="security" class="section">
+            <h2><span class="icon">🔒</span>Security & Safety</h2>
+            
+            <h3>Input Validation & Sanitization</h3>
+            <div class="code-block" data-lang="python">
+import re
+from typing import List
+
+class InputValidator:
+    def __init__(self):
+        self.max_length = 10000
+        self.blocked_patterns = [
+            r'<script.*?>.*?</script>',  # XSS prevention
+            r'javascript:',
+            r'data:text/html',
+            r'prompt.*injection',  # Basic prompt injection
+            r'ignore.*instructions',
+            r'system.*prompt'
+        ]
+    
+    def validate_input(self, text: str) -> tuple[bool, str]:
+        # Length check
+        if len(text) > self.max_length:
+            return False, "Input too long"
+        
+        # Pattern matching
+        for pattern in self.blocked_patterns:
+            if re.search(pattern, text, re.IGNORECASE):
+                return False, f"Blocked pattern detected: {pattern}"
+        
+        # Content safety check
+        if self.contains_unsafe_content(text):
+            return False, "Unsafe content detected"
+        
+        return True, "Valid"
+    
+    def contains_unsafe_content(self, text: str) -> bool:
+        # Implement your content safety logic
+        unsafe_keywords = ['hack', 'exploit', 'malware']
+        return any(keyword in text.lower() for keyword in unsafe_keywords)
+    
+    def sanitize_output(self, text: str) -> str:
+        # Remove potential harmful content from AI output
+        sanitized = re.sub(r'<script.*?>.*?</script>', '', text, flags=re.IGNORECASE)
+        sanitized = re.sub(r'javascript:', '', sanitized, flags=re.IGNORECASE)
+        return sanitized
+
+# Usage
+validator = InputValidator()
+is_valid, message = validator.validate_input(user_input)
+if not is_valid:
+    raise ValueError(f"Invalid input: {message}")
+            </div>
+
+            <h3>API Key Management</h3>
+            <div class="code-block" data-lang="python">
+import os
+import hashlib
+import secrets
+from cryptography.fernet import Fernet
+
+class SecureAPIKeyManager:
+    def __init__(self):
+        self.encryption_key = os.environ.get('ENCRYPTION_KEY') or Fernet.generate_key()
+        self.cipher_suite = Fernet(self.encryption_key)
+    
+    def generate_api_key(self, user_id: str) -> str:
+        """Generate a secure API key for a user"""
+        random_bytes = secrets.token_bytes(32)
+        user_hash = hashlib.sha256(user_id.encode()).digest()
+        combined = random_bytes + user_hash
+        return secrets.token_urlsafe(len(combined))[:32]
+    
+    def encrypt_sensitive_data(self, data: str) -> str:
+        """Encrypt sensitive data like API keys"""
+        return self.cipher_suite.encrypt(data.encode()).decode()
+    
+    def decrypt_sensitive_data(self, encrypted_data: str) -> str:
+        """Decrypt sensitive data"""
+        return self.cipher_suite.decrypt(encrypted_data.encode()).decode()
+    
+    def rotate_api_key(self, old_key: str, user_id: str) -> str:
+        """Rotate an API key"""
+        new_key = self.generate_api_key(user_id)
+        # Log the rotation for audit purposes
+        print(f"API key rotated for user: {user_id}")
+        return new_key
+
+# Environment-based configuration
+class Config:
+    def __init__(self):
+        self.openai_api_key = os.getenv('OPENAI_API_KEY')
+        self.anthropic_api_key = os.getenv('ANTHROPIC_API_KEY')
+        self.database_url = os.getenv('DATABASE_URL')
+        
+        # Validate required keys
+        if not self.openai_api_key:
+            raise ValueError("OPENAI_API_KEY environment variable required")
+
+config = Config()
+            </div>
+
+            <h3>Rate Limiting & Abuse Prevention</h3>
+            <div class="code-block" data-lang="python">
+import time
+import asyncio
+from collections import defaultdict
+from typing import Dict, Optional
+
+class RateLimiter:
+    def __init__(self):
+        self.requests: Dict[str, list] = defaultdict(list)
+        self.limits = {
+            'default': {'requests': 100, 'window': 3600},  # 100 per hour
+            'premium': {'requests': 1000, 'window': 3600}  # 1000 per hour
+        }
+    
+    async def is_allowed(self, user_id: str, tier: str = 'default') -> bool:
+        now = time.time()
+        limit_config = self.limits.get(tier, self.limits['default'])
+        
+        # Clean old requests
+        window_start = now - limit_config['window']
+        self.requests[user_id] = [
+            req_time for req_time in self.requests[user_id] 
+            if req_time > window_start
+        ]
+        
+        # Check if under limit
+        if len(self.requests[user_id]) < limit_config['requests']:
+            self.requests[user_id].append(now)
+            return True
+        
+        return False
+    
+    def get_remaining_requests(self, user_id: str, tier: str = 'default') -> int:
+        limit_config = self.limits.get(tier, self.limits['default'])
+        current_requests = len(self.requests[user_id])
+        return max(0, limit_config['requests'] - current_requests)
+
+# FastAPI middleware for rate limiting
+from fastapi import Request, HTTPException
+
+@app.middleware("http")
+async def rate_limit_middleware(request: Request, call_next):
+    user_id = request.headers.get('X-User-ID', 'anonymous')
+    
+    if not await rate_limiter.is_allowed(user_id):
+        raise HTTPException(
+            status_code=429,
+            detail="Rate limit exceeded",
+            headers={"Retry-After": "3600"}
+        )
+    
+    response = await call_next(request)
+    remaining = rate_limiter.get_remaining_requests(user_id)
+    response.headers["X-RateLimit-Remaining"] = str(remaining)
+    return response
+            </div>
+
+            <div class="warning-box">
+                <strong>🚨 Security Checklist:</strong><br>
+                ✓ Never store API keys in code<br>
+                ✓ Implement input validation and sanitization<br>
+                ✓ Use HTTPS everywhere<br>
+                ✓ Rate limit all endpoints<br>
+                ✓ Log security events<br>
+                ✓ Regular security audits<br>
+                ✓ Implement proper authentication
+            </div>
+        </div>
+
+        <div id="optimization" class="section">
+            <h2><span class="icon">⚡</span>Performance Optimization</h2>
+            
+            <h3>Token Usage Optimization</h3>
+            <div class="code-block" data-lang="python">
+import tiktoken
+from typing import List, Tuple
+
+class TokenOptimizer:
+    def __init__(self, model: str = "gpt-4"):
+        self.encoding = tiktoken.encoding_for_model(model)
+        self.max_tokens = 8192 if "gpt-4" in model else 4096
+    
+    def count_tokens(self, text: str) -> int:
+        return len(self.encoding.encode(text))
+    
+    def truncate_to_limit(self, text: str, max_tokens: int) -> str:
+        tokens = self.encoding.encode(text)
+        if len(tokens) <= max_tokens:
+            return text
+        
+        truncated_tokens = tokens[:max_tokens]
+        return self.encoding.decode(truncated_tokens)
+    
+    def optimize_prompt(self, system_prompt: str, user_message: str, 
+                       context: List[str]) -> Tuple[str, str, List[str]]:
+        """Optimize prompt by truncating context if needed"""
+        
+        # Count tokens for fixed parts
+        system_tokens = self.count_tokens(system_prompt)
+        user_tokens = self.count_tokens(user_message)
+        
+        # Reserve tokens for response
+        reserved_for_response = 1000
+        available_for_context = self.max_tokens - system_tokens - user_tokens - reserved_for_response
+        
+        # Truncate context if needed
+        optimized_context = []
+        current_tokens = 0
+        
+        for ctx in context:
+            ctx_tokens = self.count_tokens(ctx)
+            if current_tokens + ctx_tokens <= available_for_context:
+                optimized_context.append(ctx)
+                current_tokens += ctx_tokens
+            else:
+                # Truncate this context piece
+                remaining_tokens = available_for_context - current_tokens
+                if remaining_tokens > 50:  # Only add if meaningful
+                    truncated = self.truncate_to_limit(ctx, remaining_tokens)
+                    optimized_context.append(truncated)
+                break
+        
+        return system_prompt, user_message, optimized_context
+
+# Usage
+optimizer = TokenOptimizer("gpt-4")
+system, user, context = optimizer.optimize_prompt(
+    system_prompt, user_message, retrieved_docs
+)
+            </div>
+
+            <h3>Caching Strategies</h3>
+            <div class="code-block" data-lang="python">
+import hashlib
+import json
+import asyncio
+from typing import Any, Optional
+import redis
+
+class AIResponseCache:
+    def __init__(self, redis_url: str = "redis://localhost:6379"):
+        self.redis_client = redis.from_url(redis_url)
+        self.default_ttl = 3600  # 1 hour
+    
+    def _generate_cache_key(self, prompt: str, model: str, **kwargs) -> str:
+        """Generate a unique cache key for the request"""
+        cache_data = {
+            'prompt': prompt,
+            'model': model,
+            **kwargs
+        }
+        cache_string = json.dumps(cache_data, sort_keys=True)
+        return hashlib.md5(cache_string.encode()).hexdigest()
+    
+    async def get_cached_response(self, prompt: str, model: str, **kwargs) -> Optional[str]:
+        """Get cached response if available"""
+        cache_key = self._generate_cache_key(prompt, model, **kwargs)
+        try:
+            cached = self.redis_client.get(cache_key)
+            if cached:
+                return json.loads(cached)['response']
+        except Exception as e:
+            print(f"Cache read error: {e}")
+        return None
+    
+    async def cache_response(self, prompt: str, model: str, response: str, 
+                           ttl: int = None, **kwargs):
+        """Cache the AI response"""
+        cache_key = self._generate_cache_key(prompt, model, **kwargs)
+        cache_data = {
+            'response': response,
+            'timestamp': time.time(),
+            'model': model
+        }
+        
+        try:
+            self.redis_client.setex(
+                cache_key,
+                ttl or self.default_ttl,
+                json.dumps(cache_data)
+            )
+        except Exception as e:
+            print(f"Cache write error: {e}")
+
+# Decorator for caching
+def cache_ai_response(cache_instance: AIResponseCache, ttl: int = 3600):
+    def decorator(func):
+        async def wrapper(*args, **kwargs):
+            # Extract prompt and model from args/kwargs
+            prompt = kwargs.get('prompt') or args[0]
+            model = kwargs.get('model', 'gpt-4')
+            
+            # Try to get cached response
+            cached = await cache_instance.get_cached_response(prompt, model, **kwargs)
+            if cached:
+                return cached
+            
+            # Generate new response
+            response = await func(*args, **kwargs)
+            
+            # Cache the response
+            await cache_instance.cache_response(prompt, model, response, ttl, **kwargs)
+            
+            return response
+        return wrapper
+    return decorator
+
+# Usage
+cache = AIResponseCache()
+
+@cache_ai_response(cache, ttl=7200)
+async def generate_ai_response(prompt: str, model: str = "gpt-4"):
+    # Your AI generation logic here
+    return await ai_client.generate(prompt, model=model)
+            </div>
+
+            <h3>Batch Processing</h3>
+            <div class="code-block" data-lang="python">
+import asyncio
+from typing import List, Any
+import aiohttp
+
+class BatchProcessor:
+    def __init__(self, max_concurrent: int = 10, batch_size: int = 5):
+        self.max_concurrent = max_concurrent
+        self.batch_size = batch_size
+        self.semaphore = asyncio.Semaphore(max_concurrent)
+    
+    async def process_batch(self, items: List[Any], 
+                          processor_func) -> List[Any]:
+        """Process items in concurrent batches"""
+        
+        async def process_single_item(item):
+            async with self.semaphore:
+                try:
+                    return await processor_func(item)
+                except Exception as e:
+                    print(f"Error processing item {item}: {e}")
+                    return None
+        
+        # Create batches
+        batches = [
+            items[i:i + self.batch_size] 
+            for i in range(0, len(items), self.batch_size)
+        ]
+        
+        all_results = []
+        for batch in batches:
+            # Process batch concurrently
+            tasks = [process_single_item(item) for item in batch]
+            batch_results = await asyncio.gather(*tasks, return_exceptions=True)
+            all_results.extend(batch_results)
+            
+            # Small delay between batches to avoid rate limits
+            await asyncio.sleep(0.1)
+        
+        return [result for result in all_results if result is not None]
+
+# Usage for AI processing
+async def process_multiple_prompts(prompts: List[str]):
+    processor = BatchProcessor(max_concurrent=5, batch_size=3)
+    
+    async def ai_processor(prompt):
+        return await ai_client.generate(prompt)
+    
+    results = await processor.process_batch(prompts, ai_processor)
+    return results
+
+# Example usage
+prompts = [
+    "Summarize this article...",
+    "Translate this text...",
+    "Generate a title for...",
+    # ... more prompts
+]
+
+results = await process_multiple_prompts(prompts)
+            </div>
+
+            <div class="pro-tip">
+                <strong>🚀 Performance Best Practices:</strong><br>
+                • Use async/await for I/O operations<br>
+                • Implement intelligent caching strategies<br>
+                • Batch process when possible<br>
+                • Monitor and optimize token usage<br>
+                • Use connection pooling<br>
+                • Implement circuit breakers for reliability
+            </div>
+        </div>
+
+        <div id="testing" class="section">
+            <h2><span class="icon">🧪</span>Testing Strategies</h2>
+            
+            <h3>AI Application Testing Framework</h3>
+            <div class="code-block" data-lang="python">
+import pytest
+import asyncio
+from unittest.mock import AsyncMock, patch
+from typing import List, Dict, Any
+
+class AITestFramework:
+    def __init__(self):
+        self.test_cases = []
+        self.mock_responses = {}
+    
+    def add_test_case(self, name: str, input_data: Dict, 
+                     expected_output: Any, evaluation_criteria: str):
+        """Add a test case for AI functionality"""
+        self.test_cases.append({
+            'name': name,
+            'input': input_data,
+            'expected': expected_output,
+            'criteria': evaluation_criteria
+        })
+    
+    async def run_evaluation(self, ai_function, test_case: Dict) -> Dict:
+        """Run a single test case evaluation"""
+        try:
+            result = await ai_function(test_case['input'])
+            
+            # Evaluate based on criteria
+            if test_case['criteria'] == 'exact_match':
+                passed = result == test_case['expected']
+            elif test_case['criteria'] == 'contains':
+                passed = test_case['expected'].lower() in result.lower()
+            elif test_case['criteria'] == 'similarity':
+                passed = self.calculate_similarity(result, test_case['expected']) > 0.8
+            else:
+                passed = False
+            
+            return {
+                'name': test_case['name'],
+                'passed': passed,
+                'result': result,
+                'expected': test_case['expected']
+            }
+        except Exception as e:
+            return {
+                'name': test_case['name'],
+                'passed': False,
+                'error': str(e),
+                'result': None,
+                'expected': test_case['expected']
+            }
+    
+    def calculate_similarity(self, text1: str, text2: str) -> float:
+        """Calculate similarity between two texts (simplified)"""
+        words1 = set(text1.lower().split())
+        words2 = set(text2.lower().split())
+        
+        if not words1 and not words2:
+            return 1.0
+        if not words1 or not words2:
+            return 0.0
+        
+        intersection = words1 & words2
+        union = words1 | words2
+        
+        return len(intersection) / len(union)
+
+# Pytest fixtures and tests
+@pytest.fixture
+async def ai_client():
+    """Mock AI client for testing"""
+    mock_client = AsyncMock()
+    mock_client.generate.return_value = "Mocked AI response"
+    return mock_client
+
+@pytest.mark.asyncio
+async def test_ai_summarization(ai_client):
+    """Test AI summarization functionality"""
+    test_framework = AITestFramework()
+    
+    # Add test cases
+    test_framework.add_test_case(
+        name="basic_summarization",
+        input_data={"text": "Long article text here..."},
+        expected_output="concise summary",
+        evaluation_criteria="contains"
+    )
+    
+    async def summarization_function(input_data):
+        return await ai_client.generate(f"Summarize: {input_data['text']}")
+    
+    results = []
+    for test_case in test_framework.test_cases:
+        result = await test_framework.run_evaluation(summarization_function, test_case)
+        results.append(result)
+    
+    # Assert all tests passed
+    passed_tests = [r for r in results if r['passed']]
+    assert len(passed_tests) == len(results), f"Failed tests: {[r for r in results if not r['passed']]}"
+
+@pytest.mark.asyncio
+async def test_rate_limiting():
+    """Test rate limiting functionality"""
+    from your_app import RateLimiter
+    
+    rate_limiter = RateLimiter()
+    user_id = "test_user"
+    
+    # Test normal usage
+    for _ in range(10):
+        allowed = await rate_limiter.is_allowed(user_id)
+        assert allowed, "Should allow requests within limit"
+    
+    # Test rate limit exceeded (mock time to simulate rapid requests)
+    with patch('time.time', return_value=1000):
+        # Fill up the rate limit
+        for _ in range(100):
+            await rate_limiter.is_allowed(user_id)
+        
+        # This should be blocked
+        blocked = await rate_limiter.is_allowed(user_id)
+        assert not blocked, "Should block requests over limit"
+
+# Integration tests
+@pytest.mark.integration
+async def test_full_ai_pipeline():
+    """Test the complete AI processing pipeline"""
+    from your_app import AIClient, InputValidator, TokenOptimizer
+    
+    # Setup components
+    validator = InputValidator()
+    optimizer = TokenOptimizer()
+    ai_client = AIClient("test-key")
+    
+    # Test input
+    test_input = "Generate a summary of AI development trends"
+    
+    # Validate input
+    is_valid, message = validator.validate_input(test_input)
+    assert is_valid, f"Input validation failed: {message}"
+    
+    # Optimize prompt
+    system_prompt = "You are a helpful AI assistant."
+    optimized_system, optimized_user, context = optimizer.optimize_prompt(
+        system_prompt, test_input, []
+    )
+    
+    # Mock the AI response
+    with patch.object(ai_client, 'generate', new_callable=AsyncMock) as mock_generate:
+        mock_generate.return_value = "AI trends include improved efficiency..."
+        
+        response = await ai_client.generate(optimized_user)
+        
+        # Validate output
+        sanitized_response = validator.sanitize_output(response)
+        assert len(sanitized_response) > 0, "Should generate non-empty response"
+        assert "<script>" not in sanitized_response, "Should not contain harmful content"
+
+# Performance tests
+@pytest.mark.performance
+async def test_response_time():
+    """Test AI response times"""
+    import time
+    
+    with patch('your_app.ai_client.generate', new_callable=AsyncMock) as mock_generate:
+        mock_generate.return_value = "Fast response"
+        
+        start_time = time.time()
+        response = await mock_generate("Test prompt")
+        end_time = time.time()
+        
+        response_time = end_time - start_time
+        assert response_time < 2.0, f"Response too slow: {response_time}s"
+
+# Run tests
+if __name__ == "__main__":
+    pytest.main(["-v", "--asyncio-mode=auto"])
+            </div>
+
+            <div class="tip-box">
+                <strong>🎯 Testing Strategy:</strong><br>
+                • Unit tests for individual components<br>
+                • Integration tests for complete flows<br>
+                • Performance tests for response times<br>
+                • A/B tests for different prompts<br>
+                • Load tests for scalability<br>
+                • Security tests for input validation
+            </div>
+        </div>
+
+        <div id="workflows" class="section">
+            <h2><span class="icon">🔄</span>AI Workflows & Agents</h2>
+            
+            <h3>Multi-Agent Systems with AutoGen</h3>
+            <div class="code-block" data-lang="python">
+import autogen
+from typing import Dict, List
+
+# Configure LLM settings
+llm_config = {
+    "model": "gpt-4",
+    "api_key": "your-openai-key",
+    "temperature": 0.7,
+}
+
+# Create specialized agents
+researcher = autogen.AssistantAgent(
+    name="Researcher",
+    system_message="""You are a research specialist. Your role is to:
+    1. Gather and analyze information
+    2. Provide factual, well-sourced insights
+    3. Ask clarifying questions when needed
+    """,
+    llm_config=llm_config
+)
+
+writer = autogen.AssistantAgent(
+    name="Writer",
+    system_message="""You are a content writer. Your role is to:
+    1. Create engaging, well-structured content
+    2. Adapt tone and style as needed
+    3. Ensure clarity and readability
+    """,
+    llm_config=llm_config
+)
+
+critic = autogen.AssistantAgent(
+    name="Critic",
+    system_message="""You are a quality critic. Your role is to:
+    1. Review content for accuracy and quality
+    2. Suggest improvements
+    3. Ensure objectives are met
+    """,
+    llm_config=llm_config
+)
+
+user_proxy = autogen.UserProxyAgent(
+    name="UserProxy",
+    human_input_mode="TERMINATE",
+    max_consecutive_auto_reply=10,
+    code_execution_config={
+        "work_dir": "workspace",
+        "use_docker": False,
+    }
+)
+
+# Create group chat
+groupchat = autogen.GroupChat(
+    agents=[user_proxy, researcher, writer, critic],
+    messages=[],
+    max_round=10
+)
+
+manager = autogen.GroupChatManager(groupchat=groupchat, llm_config=llm_config)
+
+# Start collaborative workflow
+user_proxy.initiate_chat(
+    manager,
+    message="Create a comprehensive guide about sustainable energy solutions."
+)
+            </div>
+
+            <h3>Custom Workflow Engine</h3>
+            <div class="code-block" data-lang="python">
+from enum import Enum
+from typing import Any, Dict, List, Optional, Callable
+import asyncio
+import json
+
+class WorkflowStatus(Enum):
+    PENDING = "pending"
+    RUNNING = "running"
+    COMPLETED = "completed"
+    FAILED = "failed"
+
+class WorkflowStep:
+    def __init__(self, name: str, function: Callable, 
+                 depends_on: List[str] = None, retry_count: int = 3):
+        self.name = name
+        self.function = function
+        self.depends_on = depends_on or []
+        self.retry_count = retry_count
+        self.status = WorkflowStatus.PENDING
+        self.result = None
+        self.error = None
+
+class AIWorkflowEngine:
+    def __init__(self):
+        self.steps: Dict[str, WorkflowStep] = {}
+        self.execution_order = []
+        self.results = {}
+    
+    def add_step(self, step: WorkflowStep):
+        """Add a step to the workflow"""
+        self.steps[step.name] = step
+    
+    def build_execution_order(self):
+        """Build the execution order based on dependencies"""
+        visited = set()
+        temp_visited = set()
+        order = []
+        
+        def visit(step_name):
+            if step_name in temp_visited:
+                raise ValueError(f"Circular dependency detected involving {step_name}")
+            if step_name in visited:
+                return
+            
+            temp_visited.add(step_name)
+            step = self.steps[step_name]
+            
+            for dependency in step.depends_on:
+                if dependency not in self.steps:
+                    raise ValueError(f"Unknown dependency: {dependency}")
+                visit(dependency)
+            
+            temp_visited.remove(step_name)
+            visited.add(step_name)
+            order.append(step_name)
+        
+        for step_name in self.steps:
+            visit(step_name)
+        
+        self.execution_order = order
+    
+    async def execute_step(self, step_name: str) -> Any:
+        """Execute a single workflow step"""
+        step = self.steps[step_name]
+        
+        # Check if dependencies are completed
+        for dep in step.depends_on:
+            if self.steps[dep].status != WorkflowStatus.COMPLETED:
+                raise ValueError(f"Dependency {dep} not completed")
+        
+        step.status = WorkflowStatus.RUNNING
+        
+        for attempt in range(step.retry_count):
+            try:
+                # Pass results from dependencies
+                dep_results = {
+                    dep: self.steps[dep].result 
+                    for dep in step.depends_on
+                }
+                
+                result = await step.function(dep_results)
+                step.result = result
+                step.status = WorkflowStatus.COMPLETED
+                self.results[step_name] = result
+                return result
+                
+            except Exception as e:
+                if attempt == step.retry_count - 1:
+                    step.status = WorkflowStatus.FAILED
+                    step.error = str(e)
+                    raise
+                await asyncio.sleep(2 ** attempt)  # Exponential backoff
+    
+    async def execute(self) -> Dict[str, Any]:
+        """Execute the entire workflow"""
+        self.build_execution_order()
+        
+        for step_name in self.execution_order:
+            try:
+                await self.execute_step(step_name)
+                print(f"✓ Completed step: {step_name}")
+            except Exception as e:
+                print(f"✗ Failed step: {step_name}, Error: {e}")
+                raise
+        
+        return self.results
+
+# Example workflow implementation
+async def research_step(dependencies: Dict) -> str:
+    """Research step function"""
+    # Simulate AI research
+    await asyncio.sleep(1)
+    return "Research findings: AI is transforming industries..."
+
+async def analysis_step(dependencies: Dict) -> str:
+    """Analysis step function"""
+    research_data = dependencies.get("research", "")
+    # Simulate AI analysis
+    await asyncio.sleep(1)
+    return f"Analysis based on: {research_data[:50]}..."
+
+async def writing_step(dependencies: Dict) -> str:
+    """Writing step function"""
+    research = dependencies.get("research", "")
+    analysis = dependencies.get("analysis", "")
+    # Simulate AI writing
+    await asyncio.sleep(1)
+    return f"Article combining research and analysis: {len(research + analysis)} chars"
+
+# Build and execute workflow
+async def run_content_workflow():
+    workflow = AIWorkflowEngine()
+    
+    # Add steps
+    workflow.add_step(WorkflowStep("research", research_step))
+    workflow.add_step(WorkflowStep("analysis", analysis_step, depends_on=["research"]))
+    workflow.add_step(WorkflowStep("writing", writing_step, depends_on=["research", "analysis"]))
+    
+    # Execute
+    results = await workflow.execute()
+    print("Workflow completed:", results)
+
+# Run the workflow
+# asyncio.run(run_content_workflow())
+            </div>
+
+            <div class="pro-tip">
+                <strong>🤖 Agent Design Patterns:</strong><br>
+                • <strong>Sequential:</strong> Linear pipeline processing<br>
+                • <strong>Hierarchical:</strong> Manager-worker relationships<br>
+                • <strong>Collaborative:</strong> Peer-to-peer cooperation<br>
+                • <strong>Competitive:</strong> Multiple agents competing for best solution<br>
+                • <strong>Reflective:</strong> Self-improving agents with feedback loops
+            </div>
+        </div>
+
+        <div id="best-practices" class="section">
+            <h2><span class="icon">🏆</span>Best Practices & Pro Tips</h2>
+            
+            <h3>🎯 Prompt Engineering Mastery</h3>
+            <div class="code-block" data-lang="python">
+class PromptTemplate:
+    """Advanced prompt template with validation and optimization"""
+    
+    def __init__(self, template: str, required_vars: List[str] = None):
+        self.template = template
+        self.required_vars = required_vars or []
+    
+    def format(self, **kwargs) -> str:
+        # Validate required variables
+        missing_vars = [var for var in self.required_vars if var not in kwargs]
+        if missing_vars:
+            raise ValueError(f"Missing required variables: {missing_vars}")
+        
+        return self.template.format(**kwargs)
+    
+    @staticmethod
+    def create_few_shot_template(examples: List[Dict], task_description: str):
+        """Create few-shot learning template"""
+        example_text = "\n\n".join([
+            f"Input: {ex['input']}\nOutput: {ex['output']}"
+            for ex in examples
+        ])
+        
+        return PromptTemplate(f"""
+{task_description}
+
+Examples:
+{example_text}
+
+Now, complete this task:
+Input: {{input}}
+Output:""", required_vars=['input'])
+
+# Advanced prompt techniques
+ADVANCED_PROMPTS = {
+    "chain_of_thought": """
+Let's think about this step by step:
+
+1. First, I need to understand what {task} involves
+2. Then, I'll break down the problem into smaller parts
+3. Finally, I'll provide a comprehensive solution
+
+Task: {task}
+Context: {context}
+
+My reasoning:
+""",
+    
+    "role_prompting": """
+You are {role} with {experience} years of experience.
+Your expertise includes: {expertise}
+
+Given this context: {context}
+
+Please provide your professional analysis of: {question}
+
+Consider:
+- Industry best practices
+- Potential risks and mitigation strategies
+- Actionable recommendations
+""",
+    
+    "structured_output": """
+Analyze the following and respond in this exact JSON format:
+
+{
+    "summary": "Brief overview",
+    "key_points": ["point1", "point2", "point3"],
+    "confidence_score": 0.85,
+    "recommendations": {
+        "immediate": ["action1", "action2"],
+        "long_term": ["strategy1", "strategy2"]
+    }
+}
+
+Content to analyze: {content}
+"""
+}
+
+# Usage examples
+cot_prompt = PromptTemplate(
+    ADVANCED_PROMPTS["chain_of_thought"],
+    required_vars=['task', 'context']
+)
+
+structured_prompt = PromptTemplate(
+    ADVANCED_PROMPTS["structured_output"],
+    required_vars=['content']
+)
+            </div>
+
+            <h3>🔧 Production-Ready Architecture</h3>
+            <div class="code-block" data-lang="python">
+from dataclasses import dataclass
+from typing import Optional, List, Dict, Any
+import logging
+import structlog
+
+@dataclass
+class AIRequest:
+    """Structured AI request with metadata"""
+    user_id: str
+    prompt: str
+    model: str
+    parameters: Dict[str, Any]
+    context: Optional[Dict] = None
+    session_id: Optional[str] = None
+    request_id: Optional[str] = None
+
+@dataclass
+class AIResponse:
+    """Structured AI response with metadata"""
+    content: str
+    model: str
+    tokens_used: int
+    latency_ms: float
+    cost_estimate: float
+    confidence_score: Optional[float] = None
+    metadata: Optional[Dict] = None
+
+class ProductionAIService:
+    """Production-ready AI service with all best practices"""
+    
+    def __init__(self, config: Dict):
+        self.config = config
+        self.logger = structlog.get_logger()
+        self.metrics = MetricsCollector()
+        self.cache = ResponseCache()
+        self.validator = InputValidator()
+        self.rate_limiter = RateLimiter()
+        
+    async def process_request(self, request: AIRequest) -> AIResponse:
+        """Process AI request with full production safeguards"""
+        start_time = time.time()
+        
+        try:
+            # 1. Validate input
+            is_valid, validation_msg = self.validator.validate_input(request.prompt)
+            if not
